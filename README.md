@@ -4,6 +4,7 @@ Command Line Tool (currently) used to find the notes of certain scales and chord
 
 ### Scales
 Currently supporting the following scales and modes:
+
     * Major
     * Minor
     * Ionian (Major)
@@ -22,6 +23,7 @@ Currently supporting the following scales and modes:
 
 ### Chords
 Currently supporting the following chords:
+
     * Major
     * Minor
     * Suspended 4 (sus4)
