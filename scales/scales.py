@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-class Scales:
-    def __init__(self, notes, util): 
+class Scale:
+    def __init__(self, util): 
         self.patterns = {
             "major": [0,2,2,1,2,2,2,1],
             "minor": [0,2,1,2,2,1,2,2],
@@ -19,8 +19,9 @@ class Scales:
             "minor-blues": [0,3,2,1,1,3,2],
             "major-blues": [0,2,1,1,3,2,3]
         }
-        self.notes = notes
+
         self.util = util
+        self.notes = util.getNotes()
         
     def getPattern(self, pattern):
         key = pattern.lower()
@@ -29,9 +30,9 @@ class Scales:
     def getPatterns(self):
         return self.patterns
 
-    def getScaleNotes(self, note, pattern):
+    def getNotes(self, note, pattern):
         scalePattern = self.getPattern(pattern)
-        scaleNums = self.getScaleIntervals(note, scalePattern)
+        scaleNums = self.getIntervals(note, scalePattern)
         scaleNotes = []
         for notePosition in scaleNums:
             notePosition = self.util.adjustNote(notePosition)
@@ -39,9 +40,11 @@ class Scales:
 
         return scaleNotes
 
-    def getScaleIntervals(self, note, pattern):
+    def getIntervals(self, note, pattern):
         scaleNums = []
         noteIndex = self.notes.index(note)
+        if type(pattern) == str:
+            pattern = self.getPattern(pattern)
 
         for semitones in pattern:
             noteIndex = noteIndex + semitones

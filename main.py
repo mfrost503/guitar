@@ -9,7 +9,7 @@ from string import string
 # getting our instances 
 util = utils.Utils()
 notes = util.getNotes()
-s = scales.Scales(notes, util)
+s = scales.Scale(notes, util)
 tuning = util.getTuning("standard")
 fretboard = fretboard.Fretboard(tuning, notes)
 noteMapping = fretboard.getStringMap()
@@ -36,7 +36,7 @@ while exitStatus is False:
 
     if action.lower() == 'scale-notes':
         scale = input("What scale would you like? (Key of " + note + "): ")
-        scaleNotes = s.getScaleNotes(note, scale)
+        scaleNotes = s.getNotes(note, scale)
         print(scaleNotes)
 
     if action.lower() == 'change-note':

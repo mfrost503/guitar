@@ -7,7 +7,7 @@ class Utils:
             "standard": ["E", "A", "D", "G", "B", "E"],
             "drop-d": ["D", "A", "D", "G", "B", "E"],
             "half-step-down": ["D#/Eb", "G#/Ab", "C#/Db", "F#/Gb", "A#/Bb", "D#/Eb"],
-	    "whole-step-down": ["D", "G", "C", "F", "A", "D"]
+            "whole-step-down": ["D", "G", "C", "F", "A", "D"]
         } 
 
     def adjustNote(self, notePosition):
